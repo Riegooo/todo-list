@@ -1,4 +1,4 @@
-# Todo List (Node.js CLI App)
+#  Todo List (Node.js CLI App)
 
 A simple **command-line Todo List application** built using **Node.js** and **prompt-sync**.  
 This project lets users:
@@ -9,21 +9,30 @@ This project lets users:
 - Remove tasks  
 - Exit the program  
 
-This was created as part of my **JavaScript learning and practice**.
+Created as part of my **JavaScript learning and practice**.
 
 ---
 
 ##  Requirements
 
-Make sure you have the following installed:
+You must have:
 
-- **Node.js** → https://nodejs.org/
+- **Node.js** installed → https://nodejs.org/
 
 ---
 
-##  How to Run
+##  Installation
 
-Clone the repository and install dependencies:
+Open your **VS Code terminal** and run the following commands:
+
+### Initialize your project (creates package.json)
+
+```bash
+npm init -y
+npm install prompt-sync
+```
+
+### Clone this project (if downloading from GitHub)
 
 ```bash
 git clone https://github.com/Riegooo/todo-list.git
@@ -31,5 +40,7 @@ cd todo-list
 npm install
 ```
 
+### How to Run
 ```bash
 node main.js
+```
