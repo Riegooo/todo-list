@@ -28,25 +28,32 @@ function optionsList(){
 }
 
 function addTask(){
-    space();
-    lines(20, "=")
-    console.log("   { Add Task }")
-    lines(20, "=")
-    let usertask = prompt("Enter Task: ")
-
-    if (usertask && usertask.trim() !== ""){
-        task.push({
-            id: task.length + 1,
-            task: usertask.trim(),
-            completed: false
-        })
-        console.log("Task added!")
+    let is_running = true
+    while(is_running){
         space();
-        todoMain();
-    }else{
-        console.log("Invalid input, task not added.")
+        lines(20, "=")
+        console.log("   { Add Task }")
+        lines(20, "=")
+        let usertask = prompt("Enter Task (b to back): ")
+
+        if (usertask === 'b'.toLowerCase()){
+            space();
+            todoMain();
+        }else if (usertask && usertask.trim() !== ""){
+            task.push({
+                id: task.length + 1,
+                task: usertask.trim(),
+                completed: false
+            })
+            console.log("Task added!")
+            space();
+            todoMain();
+        }else{
+            console.log("Invalid input, task not added.")
+        }
     }
 }
+
 
 function viewTask(){
     let is_running = true
@@ -100,7 +107,15 @@ function viewTask(){
 function removeTask(){
     let is_running = true
     while(is_running){
-        let deletedtask = parseInt(prompt("Enter task id to delete task: "))
+        space();
+        lines(20, "=")
+        console.log("   { Delete Task }")
+        lines(20, "=")
+        task.forEach(task => {
+            console.log(`ID: ${task.id} | Task: ${task.task} | Completed: ${task.completed ? "Yes" : "No"}`)
+            })
+        lines(20, "-")
+        let deletedtask = parseInt(prompt("Enter task id to delete task (0. to back): "))
         const del = task.find(t => t.id === deletedtask)
         
         if (del){
@@ -108,10 +123,12 @@ function removeTask(){
             console.log("Task Deleted!")
             space();
             viewTask();
-        }else{
-            console.log("Invalid task id!")
+        }else if (deletedtask === 0){
             space();
             todoMain();
+        }else{
+            console.log("Invalid task id!")
+            continue
         }
     }
 }
