@@ -75,11 +75,16 @@ function ViewTask(){
             let userTaskCompleted = parseInt(prompt("Enter task id to complete the task: "))
             const taskId = task.find(t => t.id === userTaskCompleted);
             if (taskId){
+                space();
                 taskId.completed = true
                 console.log("Task Complited!")
+                lines(20, "=")
+                console.log("   { List Task }")
+                lines(20, "=")
                 task.forEach(task => {
                 console.log(`ID: ${task.id} | Task: ${task.task} | Completed: ${task.completed ? "Yes" : "No"}`)
                 })
+                lines(20, "-")
                 space();
                 todoMain();
             }else{
