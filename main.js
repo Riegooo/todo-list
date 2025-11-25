@@ -27,7 +27,7 @@ function optionsList(){
     })
 }
 
-function AddTask(){
+function addTask(){
     space();
     lines(20, "=")
     console.log("   { Add Task }")
@@ -48,7 +48,7 @@ function AddTask(){
     }
 }
 
-function ViewTask(){
+function viewTask(){
     let is_running = true
     while(is_running){
         space();
@@ -107,7 +107,7 @@ function removeTask(){
             task.pop()
             console.log("Task Deleted!")
             space();
-            ViewTask();
+            viewTask();
         }else{
             console.log("Invalid task id!")
             space();
@@ -131,10 +131,10 @@ function todoMain(){
             console.log("Invalid choice");
             continue
         } else if (userchoice === 1){
-            AddTask();
+            addTask();
             break
         } else if (userchoice === 2){
-            ViewTask();
+            viewTask();
             break
         } else if (userchoice === 3){
             removeTask();
