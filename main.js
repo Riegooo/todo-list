@@ -84,7 +84,7 @@ function viewTask(){
             if (taskId){
                 space();
                 taskId.completed = true
-                console.log("Task Complited!")
+                console.log("Task Completed!")
                 lines(20, "=")
                 console.log("   { List Task }")
                 lines(20, "=")
